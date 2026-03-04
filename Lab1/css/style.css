@@ -4,34 +4,50 @@
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #000000;
+    --box-bg: #452977cc;
+    --link-bg: #1b0c4d70;
+    --link-text: #000000;
+}
 
 body {
-    background-color: #f9f9f9; 
-    color: white;
+    background-color: var(--background-color); 
+    color: var(--text-color);
     max-width: 80%;
     margin: 0 auto;
     line-height: 1.6;
     padding: 20px;
 }
 
-header, nav, footer {
-    background-color: #a8a3a3; 
-    color: #fff; 
+header,footer {
+    background-color: var(--box-bg); 
+    color: var(--text-color); 
     padding: 20px;
     margin: 10px 0; 
     border-radius: 8px; 
      text-align: center
 }
+nav{
+    background-color:var(--box-bg) ; 
+    color: var(--text-color); 
+    padding: 20px;
+    margin: 10px 0; 
+    border-radius: 8px; 
+     text-align: center
+
+}
 main{
-    background-color: #a8a3a3; 
-    color: #fff; 
+    background-color: var(--box-bg); 
+    color: var(--text-color); 
      padding: 20px;
     margin: 10px 0; 
-     border-radius: 8px;
+     border-radius: 10px;
 }
 aside{
-    background-color: #a8a3a3; 
-    color: #fff; 
+    background-color: var(--box-bg); 
+    color: var(--text-color); 
      padding: 20px;
     margin: 10px 0; 
      border-radius: 8px;
@@ -42,7 +58,7 @@ aside{
     display: block;
     margin: 20px auto;
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 10px rgba(157, 66, 66, 0.5);
 }
 
 
@@ -58,13 +74,28 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
-    background-color: #212020; 
+    color: var(--text-color);
+    background-color: var(--link-bg); 
     padding: 10px 15px;
     border-radius: 6px;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #eeeeee; 
+    background-color:  var(--link-bg); 
+}
+body.dark-mode {
+    --background-color: #29292c;
+    --text-color: #ffffff;
+    --box-bg: #000000;
+    --link-bg: #444;
+    --link-text: #fff;
+}
+button{
+  background-color: var(--background-color); 
+    color: var(--text-color);
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 20px;
 }
