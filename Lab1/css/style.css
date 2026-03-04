@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #111; 
+    background-color: #f9f9f9; 
     color: white;
     max-width: 80%;
     margin: 0 auto;
@@ -14,12 +14,28 @@ body {
     padding: 20px;
 }
 
-header, nav, main, aside, footer {
-    background-color: #000; 
+header, nav, footer {
+    background-color: #a8a3a3; 
     color: #fff; 
     padding: 20px;
     margin: 10px 0; 
     border-radius: 8px; 
+     text-align: center
+}
+main{
+    background-color: #a8a3a3; 
+    color: #fff; 
+     padding: 20px;
+    margin: 10px 0; 
+     border-radius: 8px;
+}
+aside{
+    background-color: #a8a3a3; 
+    color: #fff; 
+     padding: 20px;
+    margin: 10px 0; 
+     border-radius: 8px;
+
 }
 
 #about img {
@@ -43,12 +59,12 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    background-color: #333; 
+    background-color: #212020; 
     padding: 10px 15px;
     border-radius: 6px;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #555; 
+    background-color: #eeeeee; 
 }
