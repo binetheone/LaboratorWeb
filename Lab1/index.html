@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
     <header>
-        <div class="container">
-        <h1> Vlădoiu Eusebio Sorin</h1><br>
-        <p>Facultatea de Inginerie Electrică și Știința Calculatoarelor</p><br>
-        </div>
+        <h1>Vlădoiu Eusebio Sorin</h1>
+        <p>Facultatea de Inginereie Electrica si stinta calculatoarelor </p>
+        <p id="header"></p>
     </header>
+
     <nav>
-        <div class="container">
         <ul>
-            <a href="#about">Despre</a>
-            <a href="#education">Educație</a>
+            <li><a href="#about">Despre mine</a></li>
+            <li><a href="#education">Educație</a></li>
+            <li><a href="#hobby">Hobby-uri</a></li>
+            <li><a href="#contact">Contactează-mă</a></li>
         </ul>
-        </div>
     </nav>
+
     <main>
+
         <section id="about">
             <h2>Despre mine</h2>
-            <img src="pz2.jpg" 
-                 alt="Fotografie de profil " 
-                 loading="lazy"
-                 width="200">
-  <br>
-            <p>
-            
-                Îmi place să învăț lucruri noi și să dezvolt aplicații moderne.
-            </p>
 
+            <img 
+                src="pz2.jpg" 
+                alt="Fotografie de profil a studentului" 
+                loading="lazy"
+                width="200"
+            >
+
+            <p>
+                Sunt student pasionat de programare și dezvoltare web.
+                Îmi place să învăț tehnologii noi și să lucrez la proiecte practice.
+            </p>
         </section>
+
         <section id="education">
             <h2>Educație</h2>
             <ol>
-                <li></li>
-                <li></li>
+                <li>.</li>
+                <li>.</li>
             </ol>
         </section>
+
     </main>
-    <aside>
+
+    <aside id="hobby">
         <h3>Hobby-uri</h3>
         <ul>
-            <li>Basket</li>
-            <li>Muzica</li>
-            <li>Stau</li>
+            <li>Muzică</li>
+            <li>Gaming</li>
+            <li>Sport</li>
         </ul>
     </aside>
-    <br>
 
-    <footer>
+    <footer id="contact">
+        <script src=”js/contact_form.js”></script> 
         <form>
             <label for="name">Nume:</label>
             <input type="text" id="name" name="name" required><br>
@@ -67,9 +74,10 @@
             <button type="submit">Trimite</button>
             <br>
         </form>
-        <br>
-        <p>Copyright </p>
-        <p>Contact: iHateDominaPlayers@yahoo.com</p>
+
+        <p>&copy; 2026 Vlădoiu Eusebio Sorin</p>
+        <p>Contact: ihatedominaplayers@yahoo.com</p>
     </footer>
+
 </body>
 </html>
