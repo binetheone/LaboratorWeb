@@ -92,10 +92,25 @@ body.dark-mode {
     --link-text: #fff;
 }
 button{
-  background-color: var(--background-color); 
+    text-decoration: none;
     color: var(--text-color);
-    max-width: 80%;
-    margin: 0 auto;
-    line-height: 1.6;
-    padding: 20px;
+    background-color: var(--link-bg); 
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+#myBtn {
+   position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  display: none;
+  cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--link-bg);
+}
+#myBtn:hover {
+  background-color: #555;
 }
