@@ -1,5 +1,9 @@
-import Card from './Card';
 import { useState } from 'react';
+import Card from './Card';
+import QuickNote from './QuickNote';
+import TodoList from './TodoList';
+import ContactForm from './ContactForm';
+import Clock from './Clock';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,31 +18,24 @@ function App() {
     <div>
       <h1>Dashboard</h1>
 
-      {/* Lista de proiecte */}
-      {projects.map(function(item, index) {
-        return (
-          <Card
-            key={index}
-            title={item.title}
-            description={item.description}
-          />
-        );
-      })}
+      {projects.map((item, index) => (
+        <Card
+          key={index}
+          title={item.title}
+          description={item.description}
+        />
+      ))}
 
-      {/* Contor */}
       <p>Ai apasat de {count} ori</p>
 
-      <button onClick={() => setCount(count + 1)}>
-        +1
-      </button>
+      <button onClick={() => setCount(count + 1)}>+1</button>
+      <button onClick={() => setCount(count - 1)}>-1</button>
+      <button onClick={() => setCount(0)}>Reset</button>
 
-      <button onClick={() => setCount(count - 1)}>
-        -1
-      </button>
-
-      <button onClick={() => setCount(0)}>
-        Reset
-      </button>
+      <QuickNote />
+      <TodoList />
+      <ContactForm />
+      <Clock />
     </div>
   );
 }
