@@ -1,19 +1,46 @@
 import Card from './Card';
-function App() {
-const projects = [
- { title: "Proiect 1", description: "Pagina personala" },
- { title: "Proiect 2", description: "Calculator buget" },
- { title: "Proiect 3", description: "Dashboard React" },
- { title: "Proiect 4", description: "tare" },
-];
+import { useState } from 'react';
 
-return (
+function App() {
+  const [count, setCount] = useState(0);
+
+  const projects = [
+    { title: "Proiect 1", description: "Pagina personala" },
+    { title: "Proiect 2", description: "Calculator buget" },
+    { title: "Proiect 3", description: "Dashboard React" },
+  ];
+
+  return (
     <div>
-      <h1>Proiectele mele</h1>
-{projects.map(function(item, index) {
- return <Card key={index} title={item.title} description={item.description} />;
-})}
-</div>
- );
+      <h1>Dashboard</h1>
+
+      {/* Lista de proiecte */}
+      {projects.map(function(item, index) {
+        return (
+          <Card
+            key={index}
+            title={item.title}
+            description={item.description}
+          />
+        );
+      })}
+
+      {/* Contor */}
+      <p>Ai apasat de {count} ori</p>
+
+      <button onClick={() => setCount(count + 1)}>
+        +1
+      </button>
+
+      <button onClick={() => setCount(count - 1)}>
+        -1
+      </button>
+
+      <button onClick={() => setCount(0)}>
+        Reset
+      </button>
+    </div>
+  );
 }
+
 export default App;
