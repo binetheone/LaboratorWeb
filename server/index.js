@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+
+
+app.use(express.json());
+
+
 // Prima ruta: raspunde la GET /
 app.get('/', function(req, res) {
  res.json({ message: 'Serverul functioneaza!' });
@@ -45,6 +50,19 @@ app.get('/api/stats', function(req, res) {
         done: done,
         inProgress: inProgress
     });
+});
+
+app.post('/api/projects', function(req, res) {
+    const newProject = {
+        id: projects.length + 1,
+        title: req.body.title,
+        tech: req.body.tech,
+        done: req.body.done || false,
+    };
+
+    projects.push(newProject);
+
+    res.status(201).json(newProject);
 });
 
 // Porneste serverul
