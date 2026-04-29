@@ -16,6 +16,37 @@ const projects = [
 app.get('/api/projects', function(req, res) {
  res.json(projects);
 });
+
+app.get('/api/projects', function(req, res) {
+    res.json(projects);
+});
+
+
+app.get('/api/projects/:id', function(req, res) {
+    const id = parseInt(req.params.id);
+
+    const project = projects.find(p => p.id === id);
+
+    if (!project) {
+        return res.status(404).json({ error: 'Not found' });
+    }
+
+    res.json(project);
+});
+
+
+app.get('/api/stats', function(req, res) {
+    const total = projects.length;
+    const done = projects.filter(p => p.done).length;
+    const inProgress = projects.filter(p => !p.done).length;
+
+    res.json({
+        total: total,
+        done: done,
+        inProgress: inProgress
+    });
+});
+
 // Porneste serverul
 app.listen(PORT, function() {
  console.log('Server pornit pe http://localhost:' + PORT);
