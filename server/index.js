@@ -65,6 +65,20 @@ app.post('/api/projects', function(req, res) {
     res.status(201).json(newProject);
 });
 
+app.delete('/api/projects/:id', function(req, res) {
+    const id = parseInt(req.params.id);
+
+    const index = projects.findIndex(p => p.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({ error: 'Not found' });
+    }
+
+    projects.splice(index, 1);
+
+    res.json({ message: 'Deleted' });
+});
+
 // Porneste serverul
 app.listen(PORT, function() {
  console.log('Server pornit pe http://localhost:' + PORT);
