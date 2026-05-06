@@ -33,20 +33,17 @@ app.get('/api/projects', async function(req, res) {
 });
 
 
-/*app.get('/api/projects/:id', function(req, res) {
-    const id = parseInt(req.params.id);
-
-    const project = projects.find(p => p.id === id);
-
-    if (!project) {
-        return res.status(404).json({ error: 'Not found' });
-    }
-
-    res.json(project);
+app.get('/api/projects/:id', async function(req, res) {
+    try {
+ const projects = await Project.findById(req.params.id);
+ res.json(projects);
+ } catch (err) {
+ res.status(500).json({ error: 'Status 404 ' + err });
+ }
 });
 
 
-app.get('/api/stats', function(req, res) {
+/*app.get('/api/stats', function(req, res) {
     const total = projects.length;
     const done = projects.filter(p => p.done).length;
     const inProgress = projects.filter(p => !p.done).length;
@@ -72,19 +69,19 @@ app.post('/api/projects', async function(req, res) {
  }
 });
 
-/*app.delete('/api/projects/:id', function(req, res) {
-    const id = parseInt(req.params.id);
+app.delete('/api/projects/:id', function(req, res) {
+   try {
+    const deletedProject = await Project.findByIdAndDelete(req.params.id);
 
-    const index = projects.findIndex(p => p.id === id);
-
-    if (index === -1) {
-        return res.status(404).json({ error: 'Not found' });
+    if (!deletedProject) {
+      return res.status(404).json({ error: 'Not found' });
     }
 
-    projects.splice(index, 1);
-
     res.json({ message: 'Deleted' });
-});*/
+  } catch (err) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});
 
 // Porneste serverul
 app.listen(PORT, function() {
